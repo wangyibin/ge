@@ -9,7 +9,7 @@ import (
 // MapStringToIntSlice desc
 type MapStringToIntSlice interface {
 	Add(key string, value int) MapStringToIntSlice
-	ReprItems(key string, value int) []string
+	ReprItems() []string
 }
 
 type mapStringToIntSlice struct {
@@ -26,7 +26,7 @@ func (m *mapStringToIntSlice) Add(key string, value int) MapStringToIntSlice {
 	return m
 }
 
-func (m *mapStringToIntSlice) ReprItems(key string, value int) []string {
+func (m *mapStringToIntSlice) ReprItems() []string {
 	var items []string
 	for k, v := range m.cache {
 		var vs []string
